@@ -129,8 +129,89 @@ Successfully added it, and when we check the logs, we can see the actual locatio
 
 <img width="1090" height="516" alt="image" src="https://github.com/user-attachments/assets/571b2eb4-2fed-415b-b509-792a7b064bf7" />
 
+KQL to find security events from IPAddress "82.114.228.224" where the eventID is 4625 (Failed Logons), ordering it by the time it occurred:
+
+<img width="1090" height="546" alt="image" src="https://github.com/user-attachments/assets/2c316af0-0664-49d1-b3c9-f12fca687bdb" />
+
+Another KQL entry to project necessary columns, and changing the names to be shown for the columns: 
+
+<img width="1090" height="501" alt="image" src="https://github.com/user-attachments/assets/54d3c95f-11b1-474d-ae08-df3e17cb957c" />
+
+Finally we check the map : 
+
+<img width="1090" height="608" alt="image" src="https://github.com/user-attachments/assets/0cf15fcd-3a4d-4f27-846a-7f1edf2720f8" />
+
+KQL Query to look for accounts that had failed login attempts of more than 10 times. 
+
+<img width="1090" height="594" alt="image" src="https://github.com/user-attachments/assets/5c92f9ed-88ba-467f-a0ae-c6a1ced4bdbd" />
+
+Next we are going to create a new rule:
+
+<img width="1040" height="543" alt="image" src="https://github.com/user-attachments/assets/69e0b75d-b43a-46b2-a6b6-9d4e004b5f55" />
+<img width="608" height="426" alt="image" src="https://github.com/user-attachments/assets/8b5cd83b-795a-4b27-84c6-6355c1835aa2" />
 
 
+After a few minutes we could see alerts in the incidents page:
+
+<img width="1090" height="540" alt="image" src="https://github.com/user-attachments/assets/acaba3ef-d655-4644-842f-14495863e881" />
+
+Detection of repeated failed authentication:
+
+<img width="1090" height="578" alt="image" src="https://github.com/user-attachments/assets/98790f0b-1c32-4a25-8e11-5185175086de" />
+
+
+Number of failed attempts from this exact ip “80.94.95.83” :
+
+<img width="1090" height="721" alt="image" src="https://github.com/user-attachments/assets/8639bb29-0b3c-4e4c-87bb-bc943250bae8" />
+
+
+Checking weather the attacker actually got in or not:
+
+<img width="1090" height="728" alt="image" src="https://github.com/user-attachments/assets/9b0b79d7-fe55-4919-b1a6-ea90394dc864" />
+
+Next we are going to desing a Logic App - basically to autoblock IPAddresses that crosses the threshold for number of failed logins
+
+<img width="1090" height="642" alt="image" src="https://github.com/user-attachments/assets/b926b47b-87fa-48fa-afc5-032cee4735ae" />
+
+To test if the block works, we are going to wait for an IP to get to the threshold (10 failed login attempts) 
+
+After a few minutes, we could see an automatic block for the IP ‘14.241.68.109’ 
+This IP Address had more failed login attempts than the threshold, so now that IP Address has been autoblocked by the rule:
+
+<img width="1090" height="651" alt="image" src="https://github.com/user-attachments/assets/d3daa372-b53e-476c-8088-50ca0cd99d7e" />
+
+If we check the NSG Inbound Rules, we can a new inbound rule created to deny all traffic from this IP: 
+
+<img width="1090" height="543" alt="image" src="https://github.com/user-attachments/assets/acbce2a4-a56f-47c3-9783-1f3e6feb0815" />
+
+This means Azure NSG is configured to deny matching inbound traffic from that source IP.
+
+New Issue Found:
+Even after the blocking, the same IP traffic was still flowing. The same IP was able to attempt more failed logons. This was because in the beginning of the project I had created an inbound security rule to allow any any any traffic, and this had a priority of 100 (which is the highest.), so that’s why this inbound rule was letting that ip to attempt more, then I went on to change the rule priority so that the autoblock inbound rule has a higher priority than this one. 
+
+
+After giving the autoblock rules a higher priority, this is how the inbound rules table looks like. 
+
+<img width="1090" height="149" alt="image" src="https://github.com/user-attachments/assets/f985cae9-d27f-4b05-ab36-ca0bafd9741b" />
+
+
+And now we can confirm that after the block, the login attempts has stopped and been blocked successfully
+
+<img width="1090" height="673" alt="image" src="https://github.com/user-attachments/assets/8517fe9f-f8b3-40fe-a735-870ae5339111" />
+
+The latest attempt was at UTC 8:04:03 and the block worked at UTC 8:05 and after that, no attempts were seen.
+
+Finally, we will be making the dashboard
+
+<img width="1090" height="515" alt="image" src="https://github.com/user-attachments/assets/6449a90f-3012-4409-9ca7-b7bef80654c3" />
+
+<img width="1090" height="276" alt="image" src="https://github.com/user-attachments/assets/97745184-c316-4cac-82b0-f02762ee241a" />
+
+<img width="1090" height="291" alt="image" src="https://github.com/user-attachments/assets/d00e2299-2804-416f-818d-73ccbc33908b" />
+
+<img width="1090" height="282" alt="image" src="https://github.com/user-attachments/assets/51ed15b7-ccc7-430e-8b83-d626c7338553" />
+
+<img width="1090" height="294" alt="image" src="https://github.com/user-attachments/assets/c7da926f-13fc-49fb-a3e1-09b23226a63d" />
 
 
 
