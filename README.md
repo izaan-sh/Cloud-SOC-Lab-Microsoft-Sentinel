@@ -1,8 +1,13 @@
+# ☁️ Cloud SOC Lab: Microsoft Sentinel: Detection and Automated Response with Microsoft Sentinel
+
+
+**Platform:** Microsoft Azure | Sentinel | KQL | Logic Apps 
+**Author:** Izaan Shumaiz | Cybersecurity & AI Graduate  
+**Build Period:** September 15–17, 2026 | **Report Date:** September 20, 2026  
+
+---
 <div align="center">
 
-# ☁️ Cloud SOC Lab: Microsoft Sentinel
-
-### Detection and Automated Response with Microsoft Sentinel
 
 ![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure&logoColor=white)
 ![Sentinel](https://img.shields.io/badge/Microsoft-Sentinel-0078D4?logo=microsoft&logoColor=white)
