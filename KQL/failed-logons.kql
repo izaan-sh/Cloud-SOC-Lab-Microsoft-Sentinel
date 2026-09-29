@@ -1,1 +1,4 @@
-failed-logons.kql
+SecurityEvent
+| where EventID == 4625
+| project TimeGenerated, Computer, Account, IpAddress, Activity
+| order by TimeGenerated desc
