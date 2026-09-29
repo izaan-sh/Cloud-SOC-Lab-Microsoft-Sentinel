@@ -22,21 +22,18 @@ And then created a vm and named it with a not so suspicious name, should look no
 
 This is how it looks like:
 
-<img width="940" height="492" alt="image" src="https://github.com/user-attachments/assets/24018ec8-a92f-44b0-be46-201e1a48a216" />
+<img width="940" height="466" alt="image" src="https://github.com/user-attachments/assets/dce3c0b9-bf08-4407-9323-431bb6ea2ed9" />
+
 
 
 
 Network Security Groups: 
 
-<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/f483bec7-219c-44a7-bf8d-22f08ed6aa4c" />
+<img width="1919" height="1006" alt="Screenshot 2026-09-22 155127" src="https://github.com/user-attachments/assets/6c1e9c07-ce36-4f1f-9935-4bc762cadfba" />
 
 
 
 Removing the RDP inbound rule and creating a new inbound rule that will allow "any" traffic
-
-<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/5c17443f-73c5-43d8-8cb0-0bacc246902c" />
-
-
 
 Adding the new inbound rule: 
 
@@ -46,7 +43,7 @@ Adding the new inbound rule:
 
 Next we use RDP to access our VM 
 
-<img width="940" height="491" alt="image" src="https://github.com/user-attachments/assets/7ec4cfb2-c594-4321-ace5-41def16d3caa" />
+<img width="1919" height="1003" alt="Screenshot 2026-09-22 155717" src="https://github.com/user-attachments/assets/9939b531-7df3-4d89-a584-fbf003a99af8" />
 
 
 
@@ -69,8 +66,6 @@ Then logged out of the RDP session and tried logging back into it with different
 This was done to see if the event viewer could show us the failed log in attempts under the security logs
 
 <img width="1090" height="656" alt="image" src="https://github.com/user-attachments/assets/b3971eab-017e-4461-bc7c-5d6878a0169f" />
-
-<img width="1090" height="1336" alt="image" src="https://github.com/user-attachments/assets/37062366-f089-43f9-a4f3-de53f32a3f06" />
 
 
 
@@ -121,7 +116,7 @@ Next we are going to add this geoip spreadsheet into the watchlist
 
 from here: https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/misc/geoip-summarized.csv
 
-<img width="1090" height="722" alt="image" src="https://github.com/user-attachments/assets/c44021e4-d502-42a8-9e9e-3cbf7b4d355e" />
+<img width="1167" height="773" alt="Screenshot 2026-09-22 212634" src="https://github.com/user-attachments/assets/d07549c7-f489-4ed0-a025-c6e3435adf34" />
 
 
 
@@ -135,7 +130,7 @@ KQL to find security events from IPAddress "82.114.228.224" where the eventID is
 
 Another KQL entry to project necessary columns, and changing the names to be shown for the columns: 
 
-<img width="1090" height="501" alt="image" src="https://github.com/user-attachments/assets/54d3c95f-11b1-474d-ae08-df3e17cb957c" />
+<img width="1239" height="691" alt="Screenshot 2026-09-22 221211" src="https://github.com/user-attachments/assets/d5ebfb6d-80c5-447d-896a-a6b9dcb7fb26" />
 
 Finally we check the map : 
 
