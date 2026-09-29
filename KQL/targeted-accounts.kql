@@ -1,0 +1,9 @@
+SecurityEvent
+| where EventID == 4625
+| where isnotempty(Account)
+| summarize FailedAttempts = count(),
+            SourceIPs = make_set(IpAddress, 20),
+            FirstAttempt = min(TimeGenerated),
+            LastAttempt = max(TimeGenerated)
+    by Account
+| order by FailedAttempts desc

@@ -1,0 +1,5 @@
+SecurityEvent
+| where EventID == 4624
+| where isnotempty(IpAddress)
+| project TimeGenerated, Computer, Account, IpAddress, LogonType, Activity
+| order by TimeGenerated desc
