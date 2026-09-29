@@ -1,0 +1,94 @@
+# SOC Auto-Block Malicious IP
+
+## Overview
+
+An automated response workflow was developed using Microsoft
+Sentinel, Azure Logic Apps, and an Azure Network Security Group
+(NSG).
+
+The workflow takes a suspicious source IP identified during the
+Sentinel investigation and creates a deny rule in the VM's NSG
+to block further inbound traffic from that source.
+
+## Architecture
+
+Sentinel Detection
+        ↓
+Sentinel Incident
+        ↓
+Logic App
+        ↓
+Extract Source IP
+        ↓
+Identify Target NSG
+        ↓
+Create Deny Rule
+        ↓
+Block Source IP
+
+## Components
+
+- Microsoft Sentinel
+- Azure Logic Apps
+- Azure Network Security Group
+- Windows VM
+- Log Analytics
+
+## Workflow
+
+### 1. Detection
+
+Microsoft Sentinel identifies repeated failed authentication
+attempts from a source IP that meets the configured threshold.
+
+### 2. Incident
+
+The detection generates a Sentinel incident containing the
+relevant entities, including the source IP.
+
+### 3. Logic App
+
+The Logic App is triggered and processes the incident data.
+
+The source IP is extracted from the incident entities.
+
+### 4. NSG Rule Creation
+
+The workflow creates an inbound deny rule in the Network
+Security Group associated with the Windows VM.
+
+The rule blocks traffic originating from the identified source
+IP.
+
+### 5. Validation
+
+After the deny rule is applied, subsequent authentication
+attempts from the blocked source IP are monitored to confirm
+that the response is working.
+
+## Troubleshooting
+
+### NSG Rule Priority
+
+During testing, the automated block initially did not stop
+subsequent connection attempts.
+
+The issue was traced to an existing inbound rule that allowed
+any traffic and had a higher priority than the automated deny
+rule.
+
+The NSG rule priority was adjusted so that the automated deny
+rule took precedence.
+
+After this change, subsequent authentication attempts from the
+blocked source IP stopped.
+
+## Result
+
+The automated response successfully added the malicious source
+IP to the NSG inbound deny rules.
+
+The response was then validated by monitoring subsequent
+authentication activity and confirming that the blocked source
+IP could no longer generate additional successful connection
+attempts.
