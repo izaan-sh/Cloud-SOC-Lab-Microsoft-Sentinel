@@ -15,11 +15,6 @@
 ![Logic Apps](https://img.shields.io/badge/Automation-Logic%20Apps-0062AD)
 ![Status](https://img.shields.io/badge/status-completed-brightgreen)
 
-**Prepared by:** Izaan Shumaiz  
-**Environment:** Microsoft Azure, Microsoft Sentinel
-
-<img width="1090" height="496" alt="Project overview" src="https://github.com/user-attachments/assets/fa55f5df-8f8c-4c18-80a1-900b56effae3" />
-
 </div>
 
 ---
@@ -27,6 +22,10 @@
 ## 📖 Overview
 
 This lab builds a small cloud SOC. I deployed an intentionally exposed Windows VM (a honeypot), collected its security logs in Microsoft Sentinel, and mapped real attacker activity. I then wrote a detection rule for repeated failed logons and used a Logic App to block attacking IPs automatically.
+
+<img width="1090" height="496" alt="Project overview" src="https://github.com/user-attachments/assets/fa55f5df-8f8c-4c18-80a1-900b56effae3" />
+
+---
 
 ## 🎯 What This Project Shows
 
