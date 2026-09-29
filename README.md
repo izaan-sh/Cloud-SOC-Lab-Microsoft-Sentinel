@@ -6,18 +6,7 @@
 **Build Period:** September 15–17, 2026 | **Report Date:** September 20, 2026  
 
 ---
-<div align="center">
 
-
-![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure&logoColor=white)
-![Sentinel](https://img.shields.io/badge/Microsoft-Sentinel-0078D4?logo=microsoft&logoColor=white)
-![KQL](https://img.shields.io/badge/Query-KQL-5C2D91)
-![Logic Apps](https://img.shields.io/badge/Automation-Logic%20Apps-0062AD)
-![Status](https://img.shields.io/badge/status-completed-brightgreen)
-
-</div>
-
----
 
 ## 📖 Overview
 
