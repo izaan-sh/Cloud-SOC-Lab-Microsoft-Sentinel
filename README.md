@@ -6,18 +6,11 @@
 **Build Period:** September 2026  
 
 
-![Microsoft Sentinel](https://img.shields.io/badge/Microsoft_Sentinel-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoftazure&logoColor=white)
-![KQL](https://img.shields.io/badge/KQL-Kusto_Query_Language-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-![SIEM](https://img.shields.io/badge/Cloud_SIEM-SOAR-000000?style=for-the-badge&logo=shield&logoColor=white)
-![Log Analytics](https://img.shields.io/badge/Log_Analytics-Workspace-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-
-
-![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure&logoColor=white)
-![Sentinel](https://img.shields.io/badge/Microsoft-Sentinel-0078D4?logo=microsoft&logoColor=white)
-![KQL](https://img.shields.io/badge/Query-KQL-5C2D91)
-![Logic Apps](https://img.shields.io/badge/Automation-Logic%20Apps-0062AD)
-![Status](https://img.shields.io/badge/status-completed-brightgreen)
+![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Sentinel](https://img.shields.io/badge/Microsoft-Sentinel-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![KQL](https://img.shields.io/badge/Query-KQL-5C2D91?style=for-the-badge)
+![Logic Apps](https://img.shields.io/badge/Automation-Logic%20Apps-0062AD?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-completed-brightgreen?style=for-the-badge)
 
 ---
 
