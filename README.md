@@ -300,10 +300,10 @@ After correcting the NSG rule priority, testing confirmed that subsequent connec
   <br><em>Figure 6.3 — Autoblock rule now has a higher priority.</em>
 </p>
 
-
+Now we can confirm that there were no more failed login attempts from the source IP after the autoblock, the autoblock was made at UTC Time 08:05 PM, and the latest logged event was at 08:04 PM - this shows that there were no logs made after the autoblock
 <p align="center">
   <img width="1186" height="732" alt="Screenshot 2026-09-24 002049" src="https://github.com/user-attachments/assets/c9d100dd-81e7-4817-9132-ddd552c9aeb8" />
-  <br><em>Figure 6.4 — No more failed login attempts from the source IP after the autoblock</em>
+  <br><em>Figure 6.4 — KQL Query Output - Latest failed login attempts logs from IPAddress: '14:241:68:109'.</em>
 </p>
 
 ---
