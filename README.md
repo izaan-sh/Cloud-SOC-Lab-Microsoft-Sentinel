@@ -264,19 +264,18 @@ Create NSG Deny Rule
        ↓
 Block Source IP
 ```
-
 ### 2. Testing Automated Enforcement
 
 During controlled testing, source IP `14.241.68.109` triggered the configured threshold and was automatically added to the Network Security Group deny list.
 
 <p align="center">
-  <img width="1894" height="943" alt="Screenshot 2026-09-23 235805" src="https://github.com/user-attachments/assets/53268df3-e611-4712-b071-49e1be20a4db" />
+  <img width="1894" height="943" alt="Automated NSG Deny Rule" src="https://github.com/user-attachments/assets/53268df3-e611-4712-b071-49e1be20a4db" />
   <br><em>Figure 6.1 — Automated NSG deny rule generated through the Logic App.</em>
 </p>
 
 ### ⚠️ Troubleshooting & Key Finding
 
-During initial testing, traffic from blocked IP addresses was still being observed.
+During initial testing, failed authentication attempts from the blocked source IP were still being observed.
 
 Investigation revealed that the initial **Allow Any** inbound NSG rule had a priority of `100`, causing it to take precedence over the newly created deny rule.
 
@@ -288,25 +287,41 @@ This demonstrated an important practical aspect of cloud security controls: **cr
 
 ### 3. Verification of Block
 
-After correcting the NSG rule priority, testing confirmed that subsequent connection attempts from the blocked source were no longer observed.
+After correcting the NSG rule priority, the automated containment was validated using both the NSG configuration and the security event logs.
+
+The automated block was applied at approximately **08:05 PM UTC**, while the latest failed authentication event from the source IP was recorded at approximately **08:04 PM UTC**.
+
+A KQL query was then used to retrieve the latest failed authentication events associated with the blocked source IP. The results showed no `4625` events recorded after the automated block was applied.
 
 <p align="center">
-  <img width="1544" height="926" alt="Screenshot 2026-09-24 001054" src="https://github.com/user-attachments/assets/d700a01f-b710-41c4-9bc6-d31fc26e7602" />
+  <img width="1544" height="926" alt="Block Verification" src="https://github.com/user-attachments/assets/d700a01f-b710-41c4-9bc6-d31fc26e7602" />
   <br><em>Figure 6.2 — Validation of automated source IP containment.</em>
 </p>
 
 <p align="center">
-  <img width="1650" height="226" alt="Screenshot 2026-09-24 001158" src="https://github.com/user-attachments/assets/3531da85-9a2b-479f-bdc3-2a7e1e2fa313" />
-  <br><em>Figure 6.3 — Autoblock rule now has a higher priority.</em>
+  <img width="1650" height="226" alt="NSG Rule Priority" src="https://github.com/user-attachments/assets/3531da85-9a2b-479f-bdc3-2a7e1e2fa313" />
+  <br><em>Figure 6.3 — Automated deny rule configured with higher priority than the permissive inbound rule.</em>
 </p>
 
-Now we can confirm that there were no more failed login attempts from the source IP after the autoblock, the autoblock was made at UTC Time 08:05 PM, and the latest logged event was at 08:04 PM - this shows that there were no logs made after the autoblock
+The following KQL query was used to verify the most recent failed authentication events from the blocked source IP:
+
+```kql
+// Retrieve failed authentication events from the blocked source IP
+SecurityEvent
+| where IpAddress == "14.241.68.109"
+| where EventID == 4625
+| project TimeGenerated, IpAddress, TargetUserName, LogonType, Computer
+| order by TimeGenerated desc
+| take 20
+```
+
 <p align="center">
-  <img width="1186" height="732" alt="Screenshot 2026-09-24 002049" src="https://github.com/user-attachments/assets/c9d100dd-81e7-4817-9132-ddd552c9aeb8" />
-  <br><em>Figure 6.4 — KQL Query Output - Latest failed login attempts logs from IPAddress: '14:241:68:109'.</em>
+  <img width="1186" height="462" alt="KQL Verification Results" src="https://github.com/user-attachments/assets/e4e049bd-4acc-43db-8fcf-06e0c48bc93d" />
+  <br><em>Figure 6.4 — KQL results showing the latest failed authentication events from source IP `14.241.68.109`.</em>
 </p>
 
----
+The latest recorded event occurred at approximately **08:04 PM UTC**, before the automated NSG deny rule was applied at approximately **08:05 PM UTC**. No subsequent Event ID `4625` events from the source IP were observed after the block, providing evidence that the automated containment was effective.
+
 
 ## 📈 Phase 6: Sentinel Workbook & Dashboards
 
