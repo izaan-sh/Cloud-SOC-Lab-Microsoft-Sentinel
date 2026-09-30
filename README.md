@@ -322,6 +322,7 @@ SecurityEvent
 
 The latest recorded event occurred at approximately **08:04 PM UTC**, before the automated NSG deny rule was applied at approximately **08:05 PM UTC**. No subsequent Event ID `4625` events from the source IP were observed after the block, providing evidence that the automated containment was effective.
 
+---
 
 ## 📈 Phase 6: Sentinel Workbook & Dashboards
 
