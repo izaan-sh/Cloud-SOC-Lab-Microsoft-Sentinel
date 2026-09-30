@@ -338,7 +338,12 @@ The dashboard provided visibility into:
 * Incident activity
 
 <p align="center">
-  <img width="1090" height="600" alt="Sentinel SOC Dashboard" src="https://github.com/user-attachments/assets/REPLACE_WITH_DASHBOARD_SCREENSHOT" />
+  <img width="1875" height="886" alt="Screenshot 2026-09-24 144512" src="https://github.com/user-attachments/assets/5d9cc3ab-5af0-409d-b187-a7c57b7a9ad6" />
+  <img width="1871" height="572" alt="Screenshot 2026-09-24 144538" src="https://github.com/user-attachments/assets/8c83bfbb-e5fa-401c-80a8-df82687c8c4d" />
+  <img width="1870" height="553" alt="Screenshot 2026-09-24 144556" src="https://github.com/user-attachments/assets/a9a0d969-8e32-4b71-9f59-b72aeff700fe" />
+  <img width="1862" height="563" alt="Screenshot 2026-09-24 144640" src="https://github.com/user-attachments/assets/2e2a129e-907a-4f7c-b779-a968c763f794" />
+  <img width="1863" height="574" alt="Screenshot 2026-09-24 144701" src="https://github.com/user-attachments/assets/a56b108c-b711-422b-8518-c2c72d78d8d3" />
+  <img width="1863" height="574" alt="Screenshot 2026-09-24 144701" src="https://github.com/user-attachments/assets/ee33013a-5291-4ef6-b233-1aa47464887c" />
   <br><em>Figure 7.1 — Microsoft Sentinel SOC dashboard and security monitoring visualizations.</em>
 </p>
 
@@ -459,47 +464,6 @@ An NSG rule-priority conflict was identified during testing and corrected to ens
 **7. Validation**
 The final configuration successfully demonstrated automated source IP containment and subsequent validation of the response.
 
----
-
-# 📁 Suggested Repository Structure
-
-```text
-microsoft-sentinel-soc-lab/
-│
-├── README.md
-│
-├── KQL/
-│   ├── failed-logons.kql
-│   ├── failed-logons-by-ip.kql
-│   ├── targeted-accounts.kql
-│   ├── successful-logons.kql
-│   └── multiple-failed-logons-detection.kql
-│
-├── Detection-Rules/
-│   └── multiple-failed-logons.md
-│
-├── Automation/
-│   └── SOC-AutoBlock-Malicious-IP.md
-│
-└── screenshots/
-    ├── 01-azure-resource-group.png
-    ├── 02-virtual-machine.png
-    ├── 03-network-security-group.png
-    ├── 04-rdp-access.png
-    ├── 05-log-analytics.png
-    ├── 06-microsoft-sentinel.png
-    ├── 07-ama-connector.png
-    ├── 08-security-events.png
-    ├── 09-geoip.png
-    ├── 10-kql-investigation.png
-    ├── 11-analytics-rule.png
-    ├── 12-sentinel-incident.png
-    ├── 13-incident-investigation.png
-    ├── 14-logic-app.png
-    ├── 15-nsg-autoblock.png
-    ├── 16-nsg-priority-fix.png
-    └── 17-block-confirmed.png
-```
 
 ---
 
