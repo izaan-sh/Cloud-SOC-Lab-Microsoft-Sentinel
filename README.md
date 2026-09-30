@@ -63,7 +63,7 @@ Deployed a standard Windows VM named `CORP-NET-EAST-1` to mirror a corporate end
 </p>
 
 <p align="center">
-  <img width="940" height="466" alt="VM Overview Panel" src="https://github.com/user-attachments/assets/dce3c0b9-bf08-4407-9323-431bb6ea2ed9" />
+  <img width="1919" height="1005" alt="Screenshot 2026-09-22 155043" src="https://github.com/user-attachments/assets/14216185-2fed-40c5-b9fb-4ca3bed2d914" />
   <br><em>Figure 2.2 — Windows target VM configuration details.</em>
 </p>
 
@@ -115,7 +115,7 @@ Generated baseline authentication failures locally to ensure Windows Event Viewe
 * Enabled Microsoft Sentinel on the workspace
 
 <p align="center">
-  <img width="1090" height="394" alt="Log Analytics Workspace Setup" src="https://github.com/user-attachments/assets/6a35b1a3-4493-4885-8991-e0cb4f06070f" />
+  <img width="1381" height="499" alt="Screenshot 2026-09-22 163741" src="https://github.com/user-attachments/assets/e14169c6-de19-40c2-ab9f-e59dbea0b3df" />
 </p>
 
 <p align="center">
@@ -209,6 +209,12 @@ Configured a Microsoft Sentinel Analytics Rule to detect accounts experiencing m
 
 The rule was designed to convert repeated failed authentication activity into a Sentinel incident for investigation.
 
+<p align="center">
+  <img width="1835" height="818" alt="Screenshot 2026-09-23 152122" src="https://github.com/user-attachments/assets/828cfd70-3d10-4bf2-a7b6-b0cd7ec50df2" />
+  <img width="1838" height="651" alt="Screenshot 2026-09-23 152148" src="https://github.com/user-attachments/assets/13bd64fc-b7fa-4822-a203-78fac4dd4775" />
+  <br><em>Figure 5.1 — Sentinel rule setup wizard.</em>
+</p>
+
 ### 2. Incident Investigation
 
 Once the threshold conditions were met, Microsoft Sentinel generated incidents containing the associated authentication activity.
@@ -223,8 +229,9 @@ The investigation process included reviewing:
 * Whether successful authentication occurred after repeated failures
 
 <p align="center">
-  <img width="1090" height="550" alt="Sentinel Incident Investigation" src="https://github.com/user-attachments/assets/REPLACE_WITH_INCIDENT_SCREENSHOT" />
-  <br><em>Figure 5.1 — Sentinel incident investigation and authentication activity.</em>
+  <img width="1855" height="916" alt="Screenshot 2026-09-23 152432" src="https://github.com/user-attachments/assets/c5afed7d-1dc5-4c3b-9ed0-14cb2ff9bd14" />
+  <img width="1904" height="943" alt="Screenshot 2026-09-23 171931" src="https://github.com/user-attachments/assets/6dbe9ea2-f70f-4e43-8fa7-763385332aef" />
+  <br><em>Figure 5.2 — Sentinel incident investigation and authentication activity.</em>
 </p>
 
 ---
@@ -258,7 +265,7 @@ Block Source IP
 During controlled testing, source IP `14.241.68.109` triggered the configured threshold and was automatically added to the Network Security Group deny list.
 
 <p align="center">
-  <img width="1090" height="550" alt="Automated NSG Block" src="https://github.com/user-attachments/assets/REPLACE_WITH_NSG_SCREENSHOT" />
+  <img width="1894" height="943" alt="Screenshot 2026-09-23 235805" src="https://github.com/user-attachments/assets/53268df3-e611-4712-b071-49e1be20a4db" />
   <br><em>Figure 6.1 — Automated NSG deny rule generated through the Logic App.</em>
 </p>
 
