@@ -303,7 +303,7 @@ After correcting the NSG rule priority, testing confirmed that subsequent connec
 
 <p align="center">
   <img width="1186" height="732" alt="Screenshot 2026-09-24 002049" src="https://github.com/user-attachments/assets/c9d100dd-81e7-4817-9132-ddd552c9aeb8" />
-  <br><em>Figure 6.4 — Autoblock rule now has a higher priority.</em>
+  <br><em>Figure 6.4 — No more failed login attempts from the source IP after the autoblock</em>
 </p>
 
 ---
