@@ -242,6 +242,11 @@ The investigation process included reviewing:
 
 Designed an automated response workflow using **Azure Logic Apps** to create a **Deny rule** on the Network Security Group when suspicious authentication activity crossed the configured threshold.
 
+<p align="center">
+  <img width="559" height="706" alt="Screenshot 2026-09-23 203808" src="https://github.com/user-attachments/assets/3bcd1c62-a798-450e-b30f-49e38b4aa353" />
+  <br><em>Figure 6.1 — Logic app designer</em>
+</p>
+
 The response pipeline followed this flow:
 
 ```text
@@ -286,8 +291,19 @@ This demonstrated an important practical aspect of cloud security controls: **cr
 After correcting the NSG rule priority, testing confirmed that subsequent connection attempts from the blocked source were no longer observed.
 
 <p align="center">
-  <img width="1090" height="550" alt="Block Verification" src="https://github.com/user-attachments/assets/REPLACE_WITH_BLOCK_VERIFICATION_SCREENSHOT" />
+  <img width="1544" height="926" alt="Screenshot 2026-09-24 001054" src="https://github.com/user-attachments/assets/d700a01f-b710-41c4-9bc6-d31fc26e7602" />
   <br><em>Figure 6.2 — Validation of automated source IP containment.</em>
+</p>
+
+<p align="center">
+  <img width="1650" height="226" alt="Screenshot 2026-09-24 001158" src="https://github.com/user-attachments/assets/3531da85-9a2b-479f-bdc3-2a7e1e2fa313" />
+  <br><em>Figure 6.3 — Autoblock rule now has a higher priority.</em>
+</p>
+
+
+<p align="center">
+  <img width="1186" height="732" alt="Screenshot 2026-09-24 002049" src="https://github.com/user-attachments/assets/c9d100dd-81e7-4817-9132-ddd552c9aeb8" />
+  <br><em>Figure 6.4 — Autoblock rule now has a higher priority.</em>
 </p>
 
 ---
