@@ -17,7 +17,7 @@ Everything from the detection rule onward (analytics rule tuning, incident autom
 the Logic App auto-block, the NSG priority fix, and the dashboard) is my own extension
 of the base project.
 
-📄 **[Read the full report (PDF)](SOC_Sentinel_Lab_Report.pdf)**
+📄 **[Read the full report (PDF)](https://github.com/izaan-sh/Cloud-SOC-Lab-Microsoft-Sentinel/blob/main/SOC_Sentinel_Lab_Report.pdf)**
 
 ---
 
